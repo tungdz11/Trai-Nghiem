@@ -1,0 +1,412 @@
+body {
+    background: #e6e1d8;
+    font-family: "Times New Roman", serif;
+    margin: 0;
+    padding: 20px;
+}
+
+/* KHUNG BÁO */
+.newspaper {
+    max-width: 900px;
+    margin: auto;
+    background: #fdfaf4;
+    border: 4px double #851717;
+    padding: 20px;
+}
+
+/* HEADER */
+.header {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    margin-bottom: 20px;
+}
+
+.header-inner {
+    text-align: center;
+}
+
+.header-line {
+    height: 3px;
+    background: #3b2f2f;
+    margin: 10px 0;
+}
+
+.header h1 {
+    font-size: 44px;
+    letter-spacing: 3px;
+    margin: 10px 0;
+}
+
+.subtitle {
+    font-style: italic;
+    font-size: 18px;
+}
+
+.header-info {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* CONTENT */
+.content {
+    column-count: 2;
+    column-gap: 35px;
+}
+
+.news-section {
+    break-inside: avoid;
+    margin-bottom: 25px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.8s ease;
+}
+
+.news-section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.news-section h2 {
+    border-bottom: 2px solid #3b2f2f;
+    margin-bottom: 10px;
+}
+
+.news-section p {
+    text-align: justify;
+    line-height: 1.7;
+    text-indent: 30px;
+}
+
+/* CHỮ RƠI */
+.news-section p:first-letter {
+    font-size: 42px;
+    font-weight: bold;
+    float: left;
+    padding-right: 6px;
+}
+
+/* ẢNH */
+.photo-section {
+    column-span: all;
+}
+
+.photo-grid {
+    display: flex;
+    gap: 15px;
+}
+
+.photo {
+    width: 32%;
+    background: #f6f1e7;
+    padding: 8px;
+    border: 1px solid #3b2f2f;
+    text-align: center;
+    transform: rotate(-1deg);
+    transition: 0.4s;
+}
+
+.photo:nth-child(2) {
+    transform: rotate(1deg);
+}
+
+.photo:hover {
+    transform: rotate(0deg) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.photo img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+/* FOOTER */
+.footer {
+    border-top: 3px solid #3b2f2f;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 10px;
+}
+
+/* HOA RƠI */
+#hoa-roi {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 999;
+}
+
+.flower {
+    position: absolute;
+    top: -30px;
+    font-size: 18px;
+    animation: fall linear;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
+/* ===== COMMENT ULTRA ===== */
+.comment-ultra{
+  column-span: all;
+  margin-top: 50px;
+  padding: 40px 20px;
+  background: radial-gradient(1200px 400px at 50% -10%, #fff7, transparent),
+              linear-gradient(#fdfaf4, #efe7db);
+  border: 3px double #3b2f2f;
+  position: relative;
+  overflow: hidden;
+}
+.comment-wrap{max-width:900px;margin:auto}
+.comment-ultra h2{
+  text-align:center;font-size:28px;letter-spacing:1px;margin-bottom:22px
+}
+
+/* Glass form */
+.comment-form{
+  backdrop-filter: blur(8px);
+  background: #ffffffb3;
+  border:1px solid #3b2f2f55;
+  border-radius:16px;
+  padding:18px;
+  box-shadow:0 20px 40px rgba(0,0,0,.15);
+  display:grid;gap:12px;
+}
+.comment-form input,.comment-form textarea{
+  font-family:inherit;padding:12px;border-radius:10px;
+  border:1px solid #3b2f2f;background:#fff
+}
+.comment-form textarea{min-height:100px;resize:none}
+.comment-form button{
+  justify-self:end;padding:10px 20px;border-radius:999px;
+  background:#3b2f2f;color:#fff;border:none;font-weight:bold;
+  box-shadow:0 10px 20px rgba(0,0,0,.2);
+  transition:.3s
+}
+.comment-form button:hover{transform:translateY(-2px);background:#8b0000}
+
+/* Wall */
+.comment-wall{margin-top:30px;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+
+/* Card 3D */
+.c-card{
+  background:#ffffffcc;border-radius:18px;padding:16px;
+  border:1px solid #3b2f2f55;position:relative;
+  box-shadow:0 20px 40px rgba(0,0,0,.18);
+  transform-style:preserve-3d;transition:.35s
+}
+.c-card:hover{transform:translateY(-6px) rotateX(2deg) rotateY(-2deg)}
+.c-head{display:flex;gap:10px;align-items:center}
+.c-ava{
+  width:42px;height:42px;border-radius:50%;
+  background:#3b2f2f;color:#fff;display:grid;place-items:center;
+  font-weight:bold;font-size:18px
+}
+.c-name{font-weight:bold}
+.c-time{font-size:12px;color:#666}
+.c-text{margin-top:10px;line-height:1.55}
+
+/* Reactions */
+.c-react{display:flex;gap:10px;margin-top:12px}
+.c-react button{
+  border:none;border-radius:999px;padding:6px 10px;cursor:pointer;
+  background:#f3ede3;transition:.2s
+}
+.c-react button:hover{transform:scale(1.08)}
+/* ===============================
+   VIỀN BÁO VIP PRO – MASTERPIECE
+   =============================== */
+
+.comment-ultra {
+    position: relative;
+    padding: 60px 40px;
+    background:
+        linear-gradient(135deg, #fdfaf4 0%, #efe7db 100%);
+    border: 5px double #2f1f1f;
+    box-shadow:
+        0 25px 60px rgba(0,0,0,0.25),
+        inset 0 0 0 1px rgba(255,255,255,0.6);
+    overflow: hidden;
+}
+
+/* ===== KHUNG TRONG – NÉT BÁO CỔ ===== */
+.comment-ultra::before {
+    content: "";
+    position: absolute;
+    inset: 18px;
+    border: 2px solid #3b2f2f;
+    box-shadow:
+        inset 0 0 0 3px rgba(255,255,255,0.5);
+    pointer-events: none;
+}
+
+/* ===== HỌA TIẾT GÓC BÁO ===== */
+.comment-ultra::after {
+    content: "❖  ❖  ❖";
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fdfaf4;
+    padding: 4px 22px;
+    font-size: 20px;
+    letter-spacing: 10px;
+    color: #2f1f1f;
+}
+
+/* ===== VIỀN GÓC TRANG (ORNAMENT) ===== */
+.comment-ultra .corner {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    border: 3px solid #2f1f1f;
+}
+
+.comment-ultra .corner.tl { top: 8px; left: 8px; border-right: none; border-bottom: none; }
+.comment-ultra .corner.tr { top: 8px; right: 8px; border-left: none; border-bottom: none; }
+.comment-ultra .corner.bl { bottom: 8px; left: 8px; border-right: none; border-top: none; }
+.comment-ultra .corner.br { bottom: 8px; right: 8px; border-left: none; border-top: none; }
+
+/* ===== TIÊU ĐỀ KIỂU BÁO LỚN ===== */
+.comment-ultra h2 {
+    position: relative;
+    display: inline-block;
+    margin: 0 auto 30px;
+    padding: 0 28px;
+    background: #fdfaf4;
+    font-size: 30px;
+    letter-spacing: 1.5px;
+    text-shadow: 1px 1px 0 #fff;
+}
+
+/* Đường kẻ kéo dài hai bên */
+.comment-ultra h2::before,
+.comment-ultra h2::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 160px;
+    border-top: 3px solid #2f1f1f;
+}
+
+.comment-ultra h2::before {
+    right: 100%;
+    margin-right: 16px;
+}
+
+.comment-ultra h2::after {
+    left: 100%;
+    margin-left: 16px;
+}
+
+/* ===== DẢI PHÂN CÁCH KIỂU BÁO ===== */
+.comment-form {
+    position: relative;
+    padding-bottom: 35px;
+    margin-bottom: 40px;
+}
+
+.comment-form::after {
+    content: "";
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    bottom: 0;
+    border-bottom: 3px dashed #2f1f1f;
+}
+
+/* ===== CARD BÌNH LUẬN VIP ===== */
+.c-card {
+    background:
+        linear-gradient(160deg, #ffffffdd, #f6f1e7);
+    border: 2px solid #3b2f2f;
+    box-shadow:
+        0 18px 35px rgba(0,0,0,0.25),
+        inset 0 0 0 1px rgba(255,255,255,0.6);
+}
+
+/* ===== GLOW NHẸ SANG TRỌNG ===== */
+.c-card:hover {
+    box-shadow:
+        0 30px 60px rgba(0,0,0,0.35),
+        0 0 25px rgba(139,0,0,0.25);
+}
+
+/* ===== CHI TIẾT NHỎ KIỂU BÁO ===== */
+.c-time {
+    font-style: italic;
+    letter-spacing: 0.5px;
+}
+/* ===== HÀNH TRÌNH TRẢI NGHIỆM ===== */
+.journey {
+    column-span: all;
+}
+
+.timeline {
+    margin-top: 25px;
+    border-left: 3px solid #4b3b2b;
+    padding-left: 25px;
+}
+
+.time-item {
+    position: relative;
+    margin-bottom: 35px;
+}
+
+.time-icon {
+    position: absolute;
+    left: -38px;
+    top: 0;
+    background: #fffdf8;
+    border: 2px solid #4b3b2b;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.time-content h3 {
+    margin-bottom: 6px;
+    font-size: 18px;
+    color: #3b2f2f;
+}
+
+.time-content p {
+    line-height: 1.6;
+    text-align: justify;
+}
+/* ===== NEWSPAPER TRANG TRÍ ===== */
+.newspaper {
+    background:
+        radial-gradient(circle at 10px 10px, #f3e9d2 1px, transparent 1px),
+        radial-gradient(circle at 30px 30px, #f3e9d2 1px, transparent 1px),
+        #fffaf0;
+    background-size: 40px 40px;
+    border: 4px dashed #b08968;
+    border-radius: 20px;
+    padding: 25px;
+    position: relative;
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* ghim giấy */
+.pin {
+    position: absolute;
+    font-size: 22px;
+}
+
+.pin.tl { top: -12px; left: -12px; transform: rotate(-15deg); }
+.pin.tr { top: -12px; right: -12px; transform: rotate(10deg); }
+.pin.bl { bottom: -12px; left: -12px; transform: rotate(10deg); }
+.pin.br { bottom: -12px; right: -12px; transform: rotate(-10deg); }
